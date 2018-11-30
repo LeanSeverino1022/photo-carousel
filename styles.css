@@ -102,3 +102,9 @@ input:checked + .slide-container .slide-image {
     -webkit-transition: opacity 1s ease-in-out;
     transition: opacity 1s ease-in-out;
 }
+
+.slider-control-container span{
+    -webkit-text-stroke: 2px #f9a368;
+    -webkit-text-fill-color: rgba(0, 0, 0, 0);
+    
+}
