@@ -15,7 +15,7 @@ input[name="radio-buttons"] {
     display: none;
 }
 
-/* THE CONTROLS - prev/next slide buttons */
+/* 1. THE CONTROLS - prev/next slide buttons */
 
 .slider-control-container {
     width: 100%;
@@ -50,8 +50,14 @@ input:checked + .slide-container .slider-control-container label {
     right: 10px;
 }
 
+/* add stroke/outline to characters < > */
+.slider-control-container span{
+    -webkit-text-stroke: 2px #f9a368;
+    -webkit-text-fill-color: rgba(0, 0, 0, 0);    
+}
 
-/* THE Carousel  */
+
+/* 2. THE Carousel  */
 
 /* all carousel images are on same position layered on top of each other */
 .slide-image {   
@@ -103,8 +109,40 @@ input:checked + .slide-container .slide-image {
     transition: opacity 1s ease-in-out;
 }
 
-.slider-control-container span{
-    -webkit-text-stroke: 2px #f9a368;
-    -webkit-text-fill-color: rgba(0, 0, 0, 0);
-    
+
+/* 3. NAVIGATION DOTS */
+
+.navigation-dots {
+    max-width: 65%;    
+    position: absolute;
+    text-align: center;
+    bottom: 10px;   
+    z-index: 9999;
+    left: 50%;
+    -webkit-transform: translateX(-50%);
+            transform: translateX(-50%);
+}
+
+.horizontal-scroll {
+    white-space: nowrap;
+    overflow-x: auto; /*or scroll */
+    overflow-y: hidden;
+}
+
+.dot  {
+    z-index: 100;
+    display: inline-block;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background-color: #f9a368;
+    opacity: 0.5;
+    margin: 10px;
+    line-height: 30px;
+}
+
+input#img-1:checked ~ .navigation-dots #img-1-dot,
+input#img-2:checked ~ .navigation-dots #img-2-dot,
+input#img-3:checked ~ .navigation-dots #img-3-dot {
+	opacity: 1;
 }
